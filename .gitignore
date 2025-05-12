@@ -1,0 +1,9 @@
+#Wepback bundle folder
+public/js/
+
+#Node modules
+node_modules/
+
+#VS Code thing
+.vscode/
+
