@@ -6,6 +6,88 @@ import Stats from 'three/examples/jsm/libs/stats.module';
 import * as dat from 'dat.gui';
 
 
+
+
+
+// URL ---------------------------------------------------------
+// Récupère les paramètres de l'URL
+const urlParams = new URLSearchParams(window.location.search);
+
+
+// Paramètre appelé "model"
+const model = urlParams.get('model');
+
+
+// Empêche les injections JS
+function sanitize(string) {
+  const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#x27;',
+      "/": '&#x2F;',
+  };
+  const reg = /[&<>"'/]/ig;
+  return string.replace(reg, (match)=>(map[match]));
+}
+
+
+const sanitizedModel = model ? sanitize(model) : null;
+
+
+
+
+
+// Fichier STL ------------------------------------------------
+if (sanitizedModel) {
+
+  const loader = new THREE.STLLoader();
+
+  loader.load(sanitizedModel, (geometry) => {
+
+    const material = new THREE.MeshLambertMaterial({ color: 0x606060 });
+    
+    const mesh = new THREE.Mesh(geometry, material);
+
+    mesh.rotation.x = -Math.PI / 2;
+    mesh.scale.set(0.1, 0.1, 0.1);
+
+    scene.add(mesh);
+
+  }, undefined, (error) => {
+    console.error('Il y a eu une erreur avec le chargement du fichier STL.', error);
+  });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
 let vertexShader = null;
 let fragmentShader = null;
 let material = null;
@@ -198,3 +280,9 @@ function onWindowResize() {
   renderer.setSize( window.innerWidth, window.innerHeight );
 }
 
+
+
+
+
+
+*/
