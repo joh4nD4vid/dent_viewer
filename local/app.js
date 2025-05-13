@@ -143,7 +143,7 @@ if (sanitizedModel) {
   });
 
 
-  loadOBJModel("../obj/head.obj", head_material);
+  loadOBJModel("../public/obj/head.obj", head_material);
 
 
 
