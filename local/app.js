@@ -68,7 +68,7 @@ if (sanitizedModel) {
     mesh.rotation.z = -Math.PI;
     mesh.scale.set(0.1, 0.1, 0.1);
     mesh.position.y = 6.6;
-    mesh.position.z = 12.5;
+    mesh.position.z = 12.2;
 
 
 
