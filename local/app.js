@@ -51,7 +51,7 @@ if (sanitizedModel) {
   // Chagement du modèle STL
     const loader = new STLLoader();
 
-    loader.load('../stl/' + sanitizedModel + '.stl', (geometry) => {
+    loader.load('../public/stl/' + sanitizedModel + '.stl', (geometry) => {
 
       const material = new THREE.MeshPhongMaterial({ 
         color: 0xEEEEEE, 
