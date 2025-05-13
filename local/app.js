@@ -16,6 +16,7 @@ import { camera_func, dents_position, tete_position } from './camera.js';
 
 // URL ---------------------------------------------------------
 // Récupère les paramètres de l'URL
+const url = "https://joh4nd4vid.github.io/dent_viewer/public/";
 const urlParams = new URLSearchParams(window.location.search);
 
 
@@ -51,7 +52,7 @@ if (sanitizedModel) {
   // Chagement du modèle STL
     const loader = new STLLoader();
 
-    loader.load('../public/stl/' + sanitizedModel + '.stl', (geometry) => {
+    loader.load(url + "stl/" + sanitizedModel + '.stl', (geometry) => {
 
       const material = new THREE.MeshPhongMaterial({ 
         color: 0xEEEEEE, 
@@ -143,7 +144,7 @@ if (sanitizedModel) {
   });
 
 
-  loadOBJModel("../public/obj/head.obj", head_material);
+  loadOBJModel(url + "obj" + "/head.obj", head_material);
 
 
 
