@@ -1,6 +1,8 @@
 html, body {
     margin: 0;
     height: 100%;
+    overflow : hidden;
+    font-family :'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
  }
 
  #canvas {
@@ -10,3 +12,39 @@ html, body {
  }  
  
  
+
+ #wrap_boutons {
+    position: absolute;
+    width: 100%;
+    top: 15px;
+    left: 15px;
+ }
+ 
+.bouton {
+    display : inline-block;
+    border : 1px solid rgb(66, 174, 224);
+    padding : 8px;
+    cursor : pointer;  
+    color : rgb(66, 174, 224);
+}
+
+.bouton:hover {
+   background-color: rgb(66, 174, 224);
+   color : white;
+}
+
+#centrer_tete, #centrer_dents {
+    
+}
+
+
+
+/* Interface  */
+
+.close-button {
+   display : none;
+}
+
+.main {
+    width: 360px !important;
+}
